@@ -1,7 +1,6 @@
 // numero di array per contenuto: 3
 
 // array per il titolo
-
 const arrayTitles = [
     'Calcio',
     'Tennis',
@@ -37,16 +36,16 @@ const content = document.querySelector('.ms_content');
 // definire zona immagini 
 const image = document.querySelector('.ms_box img');
 
+// dare default del currentIndex 
 title.innerHTML = arrayTitles[currentIndex];
 content.innerHTML = arrayContents[currentIndex];
 image.src = arrayImage[currentIndex];
-
-
 
 // creare due button per next ed prev 
 const buttonNext = document.querySelector('.ms_button-next');
 const buttonPrev = document.querySelector('.ms_button-prev');
 
+// button per il next 
 buttonNext.addEventListener('click', function() {
     currentIndex++; 
 
@@ -60,6 +59,7 @@ buttonNext.addEventListener('click', function() {
 
 })
 
+// button per il previous 
 buttonPrev.addEventListener('click', function() {
     currentIndex--; 
 
