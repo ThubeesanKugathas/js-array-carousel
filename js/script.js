@@ -4,7 +4,7 @@
 
 const arrayTitles = ['Title1', 'Title2', 'Title3', 'Title4'];
 // array per il contenuto 
-// const arrayContents = ['Content1', 'Content2', 'Content3', 'Content4'];
+const arrayContents = ['Content1', 'Content2', 'Content3', 'Content4'];
 // array per le immagini
 
 // current index counter 
@@ -15,9 +15,11 @@ const title = document.querySelector('.ms_title');
 
 
 // definire zona contenuti
-// const content = document.querySelector('.ms_content');
+const content = document.querySelector('.ms_content');
 
 title.innerHTML = arrayTitles[currentIndex];
+content.innerHTML = arrayContents[currentIndex];
+
 
 // creare due button per next ed prev 
 const buttonNext = document.querySelector('.ms_button-next');
@@ -30,6 +32,12 @@ buttonNext.addEventListener('click', function() {
         currentIndex = 0;
     }
 
+    if (currentIndex > arrayContents.length - 1) {
+        currentIndex = 0;
+    }
+
     title.innerHTML = arrayTitles[currentIndex];
+    content.innerHTML = arrayContents[currentIndex];    
+
 })
 
