@@ -15,7 +15,14 @@ const arrayContents = [
     'La pallacanestro, conosciuta anche come basket, è uno sport di squadra in cui due formazioni di cinque giocatori ciascuna si affrontano per segnare con un pallone nel canestro avversario, secondo tante regole prefissate e con un punteggio che varia dalla posizione di tiro.', 
     'La pallavolo è uno sport di squadra, che si svolge tra due squadre con in campo sei giocatori, ed altri sei in panchina per ognuna delle squadre. Lo scopo del gioco è realizzare punti, facendo in modo che la palla tocchi terra nel campo avversario, e impedire che la squadra avversaria possa fare altrettanto.'
 ];
+
 // array per le immagini
+const arrayImage = [
+    'img/football.png',
+    'img/tennis.jpg',
+    'img/basket.jpg',
+    'img/volleyball.png'
+]
 
 // current index counter 
 let currentIndex = 0;
@@ -27,8 +34,13 @@ const title = document.querySelector('.ms_title');
 // definire zona contenuti
 const content = document.querySelector('.ms_content');
 
+// definire zona immagini 
+const image = document.querySelector('.ms_box img');
+
 title.innerHTML = arrayTitles[currentIndex];
 content.innerHTML = arrayContents[currentIndex];
+image.src = arrayImage[currentIndex];
+
 
 
 // creare due button per next ed prev 
@@ -42,12 +54,9 @@ buttonNext.addEventListener('click', function() {
         currentIndex = 0;
     }
 
-    if (currentIndex > arrayContents.length - 1) {
-        currentIndex = 0;
-    }
-
     title.innerHTML = arrayTitles[currentIndex];
-    content.innerHTML = arrayContents[currentIndex];    
+    content.innerHTML = arrayContents[currentIndex]; 
+    image.src = arrayImage[currentIndex];
 
 })
 
@@ -58,12 +67,9 @@ buttonPrev.addEventListener('click', function() {
         currentIndex = arrayTitles.length - 1;
     }
 
-    if (currentIndex < 0) {
-        currentIndex = arrayContents.length - 1;
-    }
-
     title.innerHTML = arrayTitles[currentIndex];
     content.innerHTML = arrayContents[currentIndex];    
+    image.src = arrayImage[currentIndex];
 
 })
 

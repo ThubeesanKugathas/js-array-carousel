@@ -3,3 +3,7 @@
     height: 200px;
     margin: 0 auto;
 }
+
+.ms_box img {
+    height: 100px;
+}
